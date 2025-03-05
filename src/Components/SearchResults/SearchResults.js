@@ -1,9 +1,9 @@
 import React from "react";
 import styles from  "./SearchResults.module.css";
 
-function SearchResults () {
+function SearchResults (props) {
     return (
-        <div className="SearchResults">
+        <div className={styles.SearchResults}>
         {/* <!-- Add a TrackList component --> */}
       </div>
         );
