@@ -3,7 +3,7 @@ import styles from "./App.module.css";
 import SearchResults from '../SearchResults/SearchResults.js';
 
 function App () {
-    const [Results, setResults] = useState(
+    const [Results, setResults] = useState([
      {id: 1,
     name: 'opossum',
     artist: 'alex',
@@ -21,7 +21,7 @@ function App () {
       artist: 'elsie',
       album: 'smile'
     }
-    );
+    ]);
     return (
         <div>
         <h1>
