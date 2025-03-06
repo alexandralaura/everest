@@ -7,15 +7,17 @@ function Tracklist (props) {
   
     return (
         <div className={styles.TrackList}>
-        {tracks.map(track => 
+        {tracks.map(track => (
           <Track
+          onAdd={props.onAdd}
+          isRemoval={props.isRemoval}
           track={track}
           key={track.id}
            id={track.id} 
           name={track.name}
           artist={track.artist}
           album={track.album} 
-          isRemoval={false} />
+           />)
         )}
         
         
