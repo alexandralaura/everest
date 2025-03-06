@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import styles from "./App.module.css";
 import SearchResults from '../SearchResults/SearchResults.js';
+import SearchBar from '../SearchBar/SearchBar.js';
+import Playlist from '../Playlist/Playlist.js';
 
 function App () {
     const [Results, setResults] = useState([
@@ -22,6 +24,34 @@ function App () {
       album: 'smile'
     }
     ]);
+    const [playlistName, setPlaylistName] = useState("Alexandras Playlist");
+    const [playlistTracks, setPlaylistTracks] = useState([
+      {
+        id: 6,
+        name: 'love',
+        artist: 'jai',
+        album: 'ringwood'
+      },
+      {
+        id: 7,
+        name: 'i love you so much',
+        artist: 'lover',
+        album: 'croydon'
+      },
+      {
+        id: 8,
+        name: 'To be in love',
+        artist: 'area 51',
+        album: 'box hill'
+      }
+    ]);  
+     function addTrack(track) {
+      const isTrackThere = playlistTracks.includes(track.id);
+      if (!isTrackThere) {
+        const add = playlistTracks.push(track);
+        setPlaylistTracks(add);
+      }
+     }
     return (
         <div>
         <h1>
@@ -29,11 +59,13 @@ function App () {
         </h1>
         <div className={styles.App}>
           {/* <!-- Add a SearchBar component --> */}
+          <SearchBar />
           
           <div className={styles['App-playlist']}>
             {/* <!-- Add a SearchResults component --> */}
-            <SearchResults userSearchResults={Results} />
+            <SearchResults userSearchResults={Results} onAdd={addTrack} />
             {/* <!-- Add a Playlist component --> */}
+            <Playlist playlistName={playlistName} playlistTracks={playlistTracks}/>
           </div>
         </div>
       </div>
