@@ -11,12 +11,7 @@ function Track (props) {
     };
     function passTrack() {
       
-         return  props.onAdd({
-            id: props.id,
-            name: props.name,
-            artist: props.artist,
-            album: props.album
-          })
+         props.onAdd(props.track)
     };
     return (
       <div className={styles.Track}>

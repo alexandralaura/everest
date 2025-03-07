@@ -47,8 +47,10 @@ function App () {
     ]);  
      function addTrack(track) {
       const isTrackThere = playlistTracks.includes(track.id);
-      if (!isTrackThere) {
-        const add = playlistTracks.push(track);
+      if (isTrackThere) {
+        console.log("track already exists")
+      } else {
+        const add = playlistTracks.concat(track);
         setPlaylistTracks(add);
       }
      }
