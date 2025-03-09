@@ -14,4 +14,4 @@ const Spotify = {
 
  }
 };
-export {Spotify};
+export {Spotify}
