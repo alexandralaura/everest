@@ -9,6 +9,7 @@ function Tracklist (props) {
         <div className={styles.TrackList}>
         {tracks.map(track => (
           <Track
+          onRemove={props.onRemove}
           onAdd={props.onAdd}
           isRemoval={props.isRemoval}
           track={track}
